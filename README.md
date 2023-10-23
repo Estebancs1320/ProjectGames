@@ -6,12 +6,20 @@ sequalize, HTML, CSS, redux y axios
 ## Autor
 Esteban Castañeda Serna
 
+* [Linkedin] (www.linkedin.com/in/esteban-castañeda)
+  
+
 ## Tabla de Contenidos
 
 - [Características](#características)
 - [Instalación](#instalación)
 - [Contacto](#contacto)
   
+
+## Ver ejemplo en vivo
+
+- [ENLACEGITHUBPAGES] (ENLACEGITHUBPAGES)
+
 
 ## Caracteristicas
 

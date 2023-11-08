@@ -7,7 +7,7 @@ import style from './gameDetail.module.css'
 import { Link } from 'react-router-dom';
 
 const GameDetail = () => {
-  const { id } = useParams(); 
+  const { id } = useParams();
   const dispatch = useDispatch();
   const game = useSelector((state) => state.searchId); 
 

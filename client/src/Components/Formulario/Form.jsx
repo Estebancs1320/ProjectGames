@@ -14,7 +14,6 @@ const Form = () => {
 
     useEffect(() => {
         dispatch(getGenres())
-        console.log(genres);
     }, [dispatch])
 
     const [input, setInput] = useState({

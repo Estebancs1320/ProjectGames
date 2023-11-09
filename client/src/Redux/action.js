@@ -10,10 +10,14 @@ import { GET_VIDEOGAMES,
         POST_GAMES,
        } from './action-types';
 
+
+       const VITE_VERCEL_API_URL_BASE = import.meta.env.VITE_VERCEL_API_URL_BASE
+
 export const getVideogames = () => {
+  console.log("vercelurl", VITE_VERCEL_API_URL_BASE);
 try {
     return async (dispatch) => {
-    const { data } = await axios.get("http://localhost:3001/videogames")
+    const { data } = await axios.get(`${VITE_VERCEL_API_URL_BASE}/videogames`)
     return dispatch({type: GET_VIDEOGAMES, payload: data})
     }
     } catch (error) {
@@ -25,7 +29,7 @@ try {
     export const getVideogamesById = (id) => {
         return async (dispatch) => {
           try {
-            const { data } = await axios.get(`http://localhost:3001/videogames/${id}`);
+            const { data } = await axios.get(`${VITE_VERCEL_API_URL_BASE}/videogames/${id}`);
             if (data) {
               return dispatch({ type: GET_BY_ID, payload: data });
             } else {
@@ -39,7 +43,7 @@ try {
 
       export const postGames = (input) => {
           return async (dispatch) => {
-          const { data } = await axios.post("http://localhost:3001/videogames", input)
+          const { data } = await axios.post(`${VITE_VERCEL_API_URL_BASE}/videogames`, input)
           console.log("data",data);
           return dispatch({type: POST_GAMES, payload: data})
           }
@@ -48,7 +52,7 @@ try {
       export const getVideogamesByName = (name) => {
         return async (dispatch) => {
           try {
-            const { data } = await axios.get(`http://localhost:3001/videogames/name?name=${name}`);
+            const { data } = await axios.get(`${VITE_VERCEL_API_URL_BASE}/videogames/name?name=${name}`);
             // Verifica si la respuesta tiene datos antes de despachar la acción
             if (data) {
               return dispatch({ type: GET_BY_NAME, payload: data });
@@ -65,7 +69,7 @@ try {
 export const getGenres = () => {
     return async function(dispatch){
         try {
-            let {data} = await axios.get('http://localhost:3001/genres');
+            let {data} = await axios.get(`${VITE_VERCEL_API_URL_BASE}/genres`);
             return dispatch({type: GET_GENRES, payload: data})
         } catch (error) {
             console.log(error);
